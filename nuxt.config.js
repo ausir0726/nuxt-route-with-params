@@ -7,8 +7,8 @@ module.exports = {
       const { data: category_website } = await axios.get('https://cdn.upage.cool/f/pages/site/55a489ca4cfb0e11005f8f9d?category=568a297e5514cb1100996b65&page=1&limit=5');
       const post1Page = category_cis.results.map((post) => { return `/post1/${post.slug}`; });
       const post2Page = category_website.results.map((post) => { return `/post2/${post.slug}`; });
-      return [...post1Page,...post2Page];
-    }
+      return [...post1Page, ...post2Page];
+    },
   },
   /**
    * 如果放置的空間在資料夾內請修改 base
