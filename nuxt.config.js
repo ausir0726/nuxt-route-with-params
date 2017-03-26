@@ -5,8 +5,8 @@ module.exports = {
     async routes() {
       const { data: category_cis } = await axios.get('https://cdn.upage.cool/f/pages/site/55a489ca4cfb0e11005f8f9d?category=55a4aac54cfb0e11005f8fba&page=1&limit=5');
       const { data: category_website } = await axios.get('https://cdn.upage.cool/f/pages/site/55a489ca4cfb0e11005f8f9d?category=568a297e5514cb1100996b65&page=1&limit=5');
-      const post1Page = category_cis.results.map((post) => { return `/post1/${post.slug}`; });
-      const post2Page = category_website.results.map((post) => { return `/post2/${post.slug}`; });
+      const post1Page = category_cis.results.map(post => `/post1/${post.slug}`);
+      const post2Page = category_website.results.map(post => `/post2/${post.slug}`);
       return [...post1Page, ...post2Page];
     },
   },
